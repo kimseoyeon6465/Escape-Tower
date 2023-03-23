@@ -8,10 +8,13 @@ public class Lever : MonoBehaviour
     public GameObject LowWater;
     public GameObject OpenDoor;
     public GameObject Wall;
+    Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponentInChildren<Animator>();
+
     }
 
     // Update is called once per frame
@@ -19,14 +22,22 @@ public class Lever : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
+    //        HighWater.SetActive(false);
+    //        LowWater.SetActive(true);
+    //        Wall.SetActive(false);
+    //        OpenDoor.SetActive(true);
+    //    }
+    //}
+    private void OnMouseDown()
     {
-        if (other.tag == "Player")
-        {
-            HighWater.SetActive(false);
-            LowWater.SetActive(true);
-            Wall.SetActive(false);
-            OpenDoor.SetActive(true);
-        }
+        Debug.Log("Clicked");
+        anim.SetBool("LeverDown", true);
+
+        HighWater.SetActive(false);
+        LowWater.SetActive(true);
     }
 }
