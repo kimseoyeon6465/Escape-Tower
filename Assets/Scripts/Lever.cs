@@ -34,7 +34,7 @@ public class Lever : MonoBehaviour
     //}
     private void OnMouseDown()
     {
-        Debug.Log("Clicked");
+        Debug.Log("Correct Lever Clicked");
         anim.SetBool("LeverDown", true);
 
         HighWater.SetActive(false);
