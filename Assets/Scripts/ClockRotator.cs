@@ -23,7 +23,9 @@ public class ClockRotator : MonoBehaviour//디버그는 찍히는데 rotation이 안됨.
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("충돌");
+        //Debug.Log("충돌");
+        GameObject stage2Door = GameObject.Find("wall39");
+        Destroy(stage2Door);
     }
 }
 
