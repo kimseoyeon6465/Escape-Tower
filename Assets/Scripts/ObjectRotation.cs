@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class ObjectRotation : MonoBehaviour
 {
-    public float rotationSpeed = 10f;
+    private float _startingAngle;
+    private Vector3 _startingMousePosition;
 
-    private float mouseZ;
+    void OnMouseDown()
+    {
+        _startingAngle = transform.eulerAngles.z;
+        _startingMousePosition = Input.mousePosition;
+        Debug.Log("OnMouseDown");
+    }
 
     void OnMouseDrag()
     {
-        Debug.Log("OnMouseDrag");
-        mouseZ += Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
+        float currentMousePosition = Input.mousePosition.x;
+        float mouseOffset = currentMousePosition - _startingMousePosition.x;
 
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, mouseZ);
+        float rotationAmount = mouseOffset / Screen.width * 360.0f;
+
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, _startingAngle - rotationAmount);
+        Debug.Log("OnMouseDrag");
+
     }
 }
