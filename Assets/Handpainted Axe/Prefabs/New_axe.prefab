@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 474150}
   - component: {fileID: 3301856}
   - component: {fileID: 2307138}
+  - component: {fileID: 6341473947442591814}
+  - component: {fileID: 917295969774969023}
   m_Layer: 0
   m_Name: New_axe
   m_TagString: Untagged
@@ -83,3 +85,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6341473947442591814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe53fc93f5a17645a8d280177b2fdf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &917295969774969023
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133240}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2850993
+  m_Height: 2.2263608
+  m_Direction: 1
+  m_Center: {x: -1.227504e-14, y: -0.8637793, z: -0.13460475}
