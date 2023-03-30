@@ -22,7 +22,7 @@ public class AxeToTree : MonoBehaviour
     //        Debug.Log("collision");
     //    }
     //}
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)//충돌시 collision 출력 성공, 이제 충돌시 나무 destroy하고 장작 Initiate
     {
         if (other.gameObject.CompareTag("Tree"))
         {
