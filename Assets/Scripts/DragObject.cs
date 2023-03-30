@@ -27,9 +27,8 @@ public class DragObject : MonoBehaviour//안움직임
             //Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
             transform.position = worldPosition;
-            print("Mouse is dragging: " + transform.position);
         }
-        print(transform.position);
+        //print(transform.position);
 
     }
 
