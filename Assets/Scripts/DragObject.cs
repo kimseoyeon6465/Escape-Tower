@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class DragObject : MonoBehaviour//안움직임
 {
-    private bool isDragging = false;
+    public bool isDragging = false;
     private float distance;
 
     void OnMouseDown()
     {
         isDragging = true;
-        //distance = Vector3.Distance(transform.position, Camera.main.transform.position);
+        distance = Vector3.Distance(transform.position, Camera.main.transform.position);
     }
     
     void OnMouseUp()
@@ -20,16 +20,18 @@ public class DragObject : MonoBehaviour//안움직임
     
     void Update()
     {
+        //Debug.Log(isDragging);
         if (isDragging)
         {
-            Debug.Log(isDragging);
-            //Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance);
-            Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
+            Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance);
+            //Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
             transform.position = worldPosition;
-            print(worldPosition);
+            print("Mouse is dragging: " + transform.position);
         }
+        print(transform.position);
+
     }
-    
+
 }
 
