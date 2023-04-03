@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class AxeToTree : MonoBehaviour
 {
+    public GameObject TreeObject;
+    public GameObject FireWoodPrefab;
     // Start is called before the first frame update
     void Start()
     {
-        
+        TreeObject = GameObject.Find("Tree");
     }
 
     // Update is called once per frame
@@ -15,21 +17,17 @@ public class AxeToTree : MonoBehaviour
     {
         
     }
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Tree"))
-    //    {
-    //        Debug.Log("collision");
-    //    }
-    //}
-    private void OnTriggerEnter(Collider other)//충돌시 collision 출력 성공, 이제 충돌시 나무 destroy하고 장작 Initiate
+    
+    private void OnTriggerEnter(Collider other)//충돌시 나무 위치에 장작 Instantiate하고 나무 destroy
     {
         if (other.gameObject.CompareTag("Tree"))
         {
-            if (other.gameObject.CompareTag("Tree"))
-            {
-                Debug.Log("collision");
-            }
+            Debug.Log("collision");
+            Vector3 TreePosition = TreeObject.transform.position;
+
+            GameObject firewood = Instantiate(FireWoodPrefab, TreePosition, Quaternion.identity);
+            Destroy(TreeObject);
+
         }
     }
 

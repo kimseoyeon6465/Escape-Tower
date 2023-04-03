@@ -9406,6 +9406,14 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5938122866497352720, guid: 86fb2b9660bd90649a821472e134bef0, type: 3}
+      propertyPath: TreeObject
+      value: 
+      objectReference: {fileID: 1206812811}
+    - target: {fileID: 5938122866497352720, guid: 86fb2b9660bd90649a821472e134bef0, type: 3}
+      propertyPath: FireWoodPrefab
+      value: 
+      objectReference: {fileID: 5215759032949184108, guid: 7bcb58554a8c3844daff1cb4024489dc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86fb2b9660bd90649a821472e134bef0, type: 3}
 --- !u!1001 &1171717801
@@ -9502,6 +9510,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 460346, guid: 4262c5895a7ed7f47b98ea94be746d7b, type: 3}
   m_PrefabInstance: {fileID: 1188106818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1206812811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 192044, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
+  m_PrefabInstance: {fileID: 1928422766}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1211966881 stripped
 GameObject:
@@ -16159,7 +16172,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 192044, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
       propertyPath: m_Name
-      value: Fir_Tree
+      value: Tree
       objectReference: {fileID: 0}
     - target: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
       propertyPath: m_RootOrder
