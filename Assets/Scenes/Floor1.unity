@@ -5539,7 +5539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400050, guid: ba24e610e0a338545b447ff44a3cf1cc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -40.06
+      value: -42.26
       objectReference: {fileID: 0}
     - target: {fileID: 400050, guid: ba24e610e0a338545b447ff44a3cf1cc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7339,6 +7339,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bonfire_A_Small_Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 2728946964603907555, guid: 5120c0b529bdd489e955a6f8f3d28426, type: 3}
+      propertyPath: FirePrefab
+      value: 
+      objectReference: {fileID: 2723444422625680322, guid: 0370bcf47e9f8492cad0d19470ca3996, type: 3}
     - target: {fileID: 8386514443641745136, guid: 5120c0b529bdd489e955a6f8f3d28426, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -14098,25 +14102,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 244
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1635573010 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2723444422625680322, guid: 5120c0b529bdd489e955a6f8f3d28426, type: 3}
-  m_PrefabInstance: {fileID: 938213615}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1635573015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1635573010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9826776daf86ac0428fbbf9c39bce8bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FirewoodObject: {fileID: 0}
-  FirePrefab: {fileID: 0}
 --- !u!1001 &1643362105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18383,6 +18368,10 @@ PrefabInstance:
     - target: {fileID: 530995253892945313, guid: 283a0c8b85f7c6e4984ef8a3c29af5c8, type: 3}
       propertyPath: m_Name
       value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084339234416148808, guid: 283a0c8b85f7c6e4984ef8a3c29af5c8, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283a0c8b85f7c6e4984ef8a3c29af5c8, type: 3}

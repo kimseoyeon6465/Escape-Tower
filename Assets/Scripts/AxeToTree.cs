@@ -6,6 +6,7 @@ public class AxeToTree : MonoBehaviour
 {
     public GameObject TreeObject;
     public GameObject FireWoodPrefab;
+    public GameObject firewood;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class AxeToTree : MonoBehaviour
             Debug.Log("collision");
             Vector3 TreePosition = TreeObject.transform.position;
 
-            GameObject firewood = Instantiate(FireWoodPrefab, TreePosition, Quaternion.identity);
+            firewood = Instantiate(FireWoodPrefab, TreePosition, Quaternion.identity);
             Destroy(TreeObject);
 
         }

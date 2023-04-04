@@ -9,7 +9,7 @@ public class FirewoodCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FirewoodObject = GameObject.Find("Firewood_B");
+        //FirewoodObject = GameObject.Find("Firewood_B(Clone)");
     }
 
     // Update is called once per frame
@@ -22,10 +22,11 @@ public class FirewoodCollision : MonoBehaviour
         if(other.gameObject.CompareTag("Firewood"))
         {
             Debug.Log("Firewood collision");
-            Vector3 FirewoodPosition = FirewoodObject.transform.position;
-
+            Vector3 FirewoodPosition = this.gameObject.transform.position;
             GameObject fire = Instantiate(FirePrefab, FirewoodPosition, Quaternion.identity);
-            Destroy(FirewoodObject);
+
+            //Destroy(this.gameObject);
+
         }
     }
 }
