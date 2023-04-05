@@ -25,8 +25,8 @@ public class Player2 : MonoBehaviour//플레이어 회전 수정함. 점프구현 삭제해야함.
     void Update()
     {
         //Jump();
-        anim.SetBool("isRun", movement != Vector3.zero);
-        Slide();
+        anim.SetBool("isWalk", movement != Vector3.zero);
+        //Slide();
     }
     void Run()
     {

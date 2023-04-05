@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     Rigidbody rigidbody;
+    public float moveSpeed;
+
     public float speed;
     public float rotateSpeed;
     float horizontalMove;
@@ -30,19 +32,33 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal");
-        verticalMove = Input.GetAxisRaw("Vertical");
+        //horizontalMove = Input.GetAxisRaw("Horizontal");
+        //verticalMove = Input.GetAxisRaw("Vertical");
 
-        //movement = new Vector3(horizontalMove, 0, verticalMove).normalized;
-        //transform.position += movement * speed * Time.deltaTime;
         //animator.SetBool("isWalk", movement != Vector3.zero);
+
         AnimationUpdate();
     }
     void FixedUpdate()
     {
-        Turn();
-        Run();
+        //Turn();
+        //Run();
+        //Run2();
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
 
+        // calculate the movement direction based on input
+        Vector3 movementDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
+
+        // move the player based on the movement direction and speed
+        rigidbody.MovePosition(transform.position + movementDirection * speed * Time.fixedDeltaTime);
+
+        // rotate the player to face the movement direction
+        if (movementDirection.magnitude > 0)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
+            rigidbody.MoveRotation(Quaternion.RotateTowards(rigidbody.rotation, targetRotation, 200f * Time.fixedDeltaTime));
+        }
     }
     void Turn()
     {
@@ -59,6 +75,27 @@ public class Player : MonoBehaviour
 
         rigidbody.MovePosition(transform.position + movement);
     }
+    void Run2()
+    {
+        float hAxis = Input.GetAxisRaw("Horizontal");
+        float vAxis = Input.GetAxisRaw("Vertical");
+
+        Vector3 dir = new Vector3(hAxis, 0, vAxis);
+
+        // 바라보는 방향으로 회전 후 다시 정면을 바라보는 현상을 막기 위해 설정
+        if (!(hAxis == 0 && vAxis == 0))
+        {
+            // 이동과 회전을 함께 처리
+            transform.position += dir * moveSpeed * Time.deltaTime;
+            // 회전하는 부분. Point 1.
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * rotateSpeed);
+        }
+        movement.Set(hAxis, 0, vAxis);
+        movement = movement.normalized * moveSpeed * Time.deltaTime;
+
+        rigidbody.MovePosition(transform.position + movement);
+    }
+
     void AnimationUpdate()
     {
         if (horizontalMove == 0 && verticalMove == 0)
