@@ -12,11 +12,12 @@ public class Player : MonoBehaviour
     public float speed;
     public float rotateSpeed;
     //public bool isWalk = false;
-    float horizontalMove;
-    float verticalMove;
+    float horizontalInput;
+    float verticalInput;
     GameController gameController;
 
     Vector3 movement;
+    Vector3 movementDirection;
     Animator animator;
     // Start is called before the first frame update
 
@@ -38,45 +39,35 @@ public class Player : MonoBehaviour
 
         //animator.SetBool("isWalk", movement != Vector3.zero);
 
-        AnimationUpdate();
+        //AnimationUpdate();
         //Debug.Log(animator.GetBool("isWalk"));
+        GetInput();
+        Move();
+        Turn();
+
     }
     void FixedUpdate()
     {
         //Turn();
         //Run();
         //Run2();
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-        // calculate the movement direction based on input
-        Vector3 movementDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
-
-        // move the player based on the movement direction and speed
-        rigidbody.MovePosition(transform.position + movementDirection * speed * Time.fixedDeltaTime);
-
-        // rotate the player to face the movement direction
+       
+    }
+    void Turn()
+    {
         if (movementDirection.magnitude > 0)
         {
             Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
             rigidbody.MoveRotation(Quaternion.RotateTowards(rigidbody.rotation, targetRotation, 200f * Time.fixedDeltaTime));
         }
     }
-    void Turn()
-    {
-        if (horizontalMove == 0 && verticalMove == 0)
-            return;
-        Quaternion newRotation = Quaternion.LookRotation(movement);
-        rigidbody.rotation = Quaternion.Slerp(rigidbody.rotation, newRotation, rotateSpeed * Time.deltaTime);
-        //rigidbody.MoveRotation(newRotation);
-    }
-    void Run()
-    {
-        movement = new Vector3(horizontalMove, 0, verticalMove).normalized;
-        movement = movement.normalized * speed * Time.deltaTime;
+    //void Run()
+    //{
+    //    movement = new Vector3(horizontalMove, 0, verticalMove).normalized;
+    //    movement = movement.normalized * speed * Time.deltaTime;
 
-        rigidbody.MovePosition(transform.position + movement);
-    }
+    //    rigidbody.MovePosition(transform.position + movement);
+    //}
     void Run2()
     {
         float hAxis = Input.GetAxisRaw("Horizontal");
@@ -97,35 +88,63 @@ public class Player : MonoBehaviour
 
         rigidbody.MovePosition(transform.position + movement);
     }
-
-    void AnimationUpdate()
+    void TurnandRun()
     {
-        Debug.Log(horizontalMove);
-        Debug.Log(verticalMove);
-        if (horizontalMove == 0 && verticalMove == 0)
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        // calculate the movement direction based on input
+        Vector3 movementDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
+
+        // move the player based on the movement direction and speed
+        rigidbody.MovePosition(transform.position + movementDirection * speed * Time.fixedDeltaTime);
+
+        // rotate the player to face the movement direction
+        if (movementDirection.magnitude > 0)
         {
-            animator.SetBool("isWalk", false);
-
+            Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
+            rigidbody.MoveRotation(Quaternion.RotateTowards(rigidbody.rotation, targetRotation, 200f * Time.fixedDeltaTime));
         }
-        else
-        {
-            animator.SetBool("isWalk", true);
-            Debug.Log("else문 걸림");
+    }
+    void GetInput()
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+    }
+    private void Move()
+    {
+        movementDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
+        rigidbody.MovePosition(transform.position + movementDirection * speed * Time.fixedDeltaTime);
+        animator.SetBool("isWalk", movementDirection != Vector3.zero);
+    }
+    //void AnimationUpdate()
+    //{
+    //    Debug.Log(horizontalMove);
+    //    Debug.Log(verticalMove);
+    //    if (horizontalMove == 0 && verticalMove == 0)
+    //    {
+    //        animator.SetBool("isWalk", false);
+
+    //    }
+    //    else
+    //    {
+    //        animator.SetBool("isWalk", true);
+    //        Debug.Log("else문 걸림");
 
 
-        }
-        void OnCollisionEnter(Collision collision)
-        {
-            //    if (collision.gameObject.CompareTag("Door"))
-            //    {
-            //        SceneManager.LoadScene("3x3Puzzle");
-            //}
-            if (collision.gameObject.CompareTag("DoorToFloor1"))
-            {
-                SceneManager.LoadScene("Floor1");
+    //    }
+        //void OnCollisionEnter(Collision collision)
+        //{
+        //    //    if (collision.gameObject.CompareTag("Door"))
+        //    //    {
+        //    //        SceneManager.LoadScene("3x3Puzzle");
+        //    //}
+        //    if (collision.gameObject.CompareTag("DoorToFloor1"))
+        //    {
+        //        SceneManager.LoadScene("Floor1");
 
-            }
-        }
+        //    }
+        //}
         //private void OnTriggerEnter(Collider collision)
         //{
         //    if(collision.tag=="Key")
@@ -133,4 +152,5 @@ public class Player : MonoBehaviour
         //    }
         //}
     }
-}
+
+
