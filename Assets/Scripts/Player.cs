@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     public float speed;
     public float rotateSpeed;
+    //public bool isWalk = false;
     float horizontalMove;
     float verticalMove;
     GameController gameController;
@@ -23,7 +24,7 @@ public class Player : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
 
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
     }
     private void Start()
     {
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
         //animator.SetBool("isWalk", movement != Vector3.zero);
 
         AnimationUpdate();
+        //Debug.Log(animator.GetBool("isWalk"));
     }
     void FixedUpdate()
     {
@@ -70,7 +72,7 @@ public class Player : MonoBehaviour
     }
     void Run()
     {
-        movement=new Vector3(horizontalMove, 0, verticalMove).normalized;
+        movement = new Vector3(horizontalMove, 0, verticalMove).normalized;
         movement = movement.normalized * speed * Time.deltaTime;
 
         rigidbody.MovePosition(transform.position + movement);
@@ -98,27 +100,37 @@ public class Player : MonoBehaviour
 
     void AnimationUpdate()
     {
+        Debug.Log(horizontalMove);
+        Debug.Log(verticalMove);
         if (horizontalMove == 0 && verticalMove == 0)
-            animator.SetBool("isWalk", false);
-        else
-            animator.SetBool("isWalk", true);
-    }
-    void OnCollisionEnter(Collision collision)
-    {
-        //    if (collision.gameObject.CompareTag("Door"))
-        //    {
-        //        SceneManager.LoadScene("3x3Puzzle");
-        //}
-        if (collision.gameObject.CompareTag("DoorToFloor1"))
         {
-            SceneManager.LoadScene("Floor1");
+            animator.SetBool("isWalk", false);
 
         }
+        else
+        {
+            animator.SetBool("isWalk", true);
+            Debug.Log("else¹® °É¸²");
+
+
+        }
+        void OnCollisionEnter(Collision collision)
+        {
+            //    if (collision.gameObject.CompareTag("Door"))
+            //    {
+            //        SceneManager.LoadScene("3x3Puzzle");
+            //}
+            if (collision.gameObject.CompareTag("DoorToFloor1"))
+            {
+                SceneManager.LoadScene("Floor1");
+
+            }
+        }
+        //private void OnTriggerEnter(Collider collision)
+        //{
+        //    if(collision.tag=="Key")
+        //    {
+        //    }
+        //}
     }
-    //private void OnTriggerEnter(Collider collision)
-    //{
-    //    if(collision.tag=="Key")
-    //    {
-    //    }
-    //}
 }
