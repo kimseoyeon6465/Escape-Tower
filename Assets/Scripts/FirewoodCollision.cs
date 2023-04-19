@@ -10,6 +10,7 @@ public class FirewoodCollision : MonoBehaviour
     void Start()
     {
         //FirewoodObject = GameObject.Find("Firewood_B(Clone)");
+        //SnowMan=GameObject.Find("Snow Man_01");
     }
 
     // Update is called once per frame
@@ -24,8 +25,9 @@ public class FirewoodCollision : MonoBehaviour
             Debug.Log("Firewood collision");
             Vector3 FirewoodPosition = this.gameObject.transform.position;
             GameObject fire = Instantiate(FirePrefab, FirewoodPosition, Quaternion.identity);
-
-            //Destroy(this.gameObject);
+            //여기서 Destroy를 해야하지 않나?
+            //Destroy(객체);
+            Destroy(this.gameObject);
 
         }
     }

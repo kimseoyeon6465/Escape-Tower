@@ -9,8 +9,12 @@ public class DragObject : MonoBehaviour//안움직임
 
     void OnMouseDown()
     {
+        Debug.Log("OnMouseDown 호출");
+        Debug.Log(Camera.main.transform.position);
+
         isDragging = true;
         distance = Vector3.Distance(transform.position, Camera.main.transform.position);
+        //Debug.Log("distance"+distance);
     }
     
     void OnMouseUp()
