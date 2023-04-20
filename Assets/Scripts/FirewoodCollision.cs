@@ -6,11 +6,13 @@ public class FirewoodCollision : MonoBehaviour
 {
     public GameObject FirewoodObject;
     public GameObject FirePrefab;
+    public GameObject SnowMan;
     // Start is called before the first frame update
     void Start()
     {
         //FirewoodObject = GameObject.Find("Firewood_B(Clone)");
-        //SnowMan=GameObject.Find("Snow Man_01");
+        SnowMan=GameObject.FindWithTag("Snowman");
+
     }
 
     // Update is called once per frame
@@ -27,8 +29,15 @@ public class FirewoodCollision : MonoBehaviour
             GameObject fire = Instantiate(FirePrefab, FirewoodPosition, Quaternion.identity);
             //여기서 Destroy를 해야하지 않나?
             //Destroy(객체);
-            Destroy(this.gameObject);
+            Invoke("DestroySnowMan", 3f);
+
+            //Destroy(this.gameObject);
 
         }
+    }
+    void DestroySnowMan()
+    {
+        Destroy(SnowMan);
+        Debug.Log("3초 지나서 호출");
     }
 }
