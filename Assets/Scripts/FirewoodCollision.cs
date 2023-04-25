@@ -31,6 +31,8 @@ public class FirewoodCollision : MonoBehaviour
             //Destroy(객체);
             Invoke("DestroySnowMan", 3f);
             //뭘해야할지 모르겠음
+            //여전히 뭘 해야할지 모르겠음
+
             //Destroy(this.gameObject);
 
         }
