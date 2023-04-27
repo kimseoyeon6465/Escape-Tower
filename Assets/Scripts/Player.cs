@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     Vector3 movementDirection;
     Animator animator;
     // Start is called before the first frame update
-
+    //¹» ÇØ¾ßÇÏ³ª
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
