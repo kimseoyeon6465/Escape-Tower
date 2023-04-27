@@ -33,6 +33,7 @@ public class FirewoodCollision : MonoBehaviour
             //뭘해야할지 모르겠음
             //여전히 뭘 해야할지 모르겠음
             //아직도 뭘 해야할지 모르겠음
+            //오늘도 뭘 해야할지 모르겠음
             //Destroy(this.gameObject);
 
         }
