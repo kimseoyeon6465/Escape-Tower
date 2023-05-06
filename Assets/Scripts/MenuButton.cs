@@ -19,7 +19,14 @@ public class MenuButton : MonoBehaviour
     }
     public void MenuButtonClicked()
     {
-        Debug.Log("Button Clicked");
+        //Debug.Log("Button Clicked");
         menuPanel.SetActive(true);
+    }
+    
+    public void MenuExitClicked()
+    {
+        Debug.Log("button clicked");
+        menuPanel.SetActive(false);
+
     }
 }
