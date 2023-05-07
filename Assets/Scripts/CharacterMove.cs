@@ -11,8 +11,11 @@ public class CharacterMove : MonoBehaviour
 
     void Update()
     {
-        MouseRotation();
-        KeyboardMove();
+        if(Time.timeScale!=0)
+        {
+            MouseRotation();
+            KeyboardMove();
+        }
     }
 
     // 마우스의 움직임에 따라 카메라를 회전 시킨다.
