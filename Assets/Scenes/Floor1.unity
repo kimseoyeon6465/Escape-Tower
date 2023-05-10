@@ -8009,6 +8009,10 @@ PrefabInstance:
       value: Bonfire_A_Small_Fire
       objectReference: {fileID: 0}
     - target: {fileID: 2728946964603907555, guid: 5120c0b529bdd489e955a6f8f3d28426, type: 3}
+      propertyPath: SnowMan
+      value: 
+      objectReference: {fileID: 4336891094729161283}
+    - target: {fileID: 2728946964603907555, guid: 5120c0b529bdd489e955a6f8f3d28426, type: 3}
       propertyPath: FirePrefab
       value: 
       objectReference: {fileID: 2723444422625680322, guid: 0370bcf47e9f8492cad0d19470ca3996, type: 3}
@@ -20304,7 +20308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3972674420810364702, guid: b8983df1b41b9a046a2bf792f6daff48, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3972674420810396104, guid: b8983df1b41b9a046a2bf792f6daff48, type: 3}
       propertyPath: moveSpeed
@@ -20385,6 +20389,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c4693946c930b54ca1ff41d086f20cb, type: 3}
+--- !u!1 &4336891094729161283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244988455824015894, guid: 7c4693946c930b54ca1ff41d086f20cb, type: 3}
+  m_PrefabInstance: {fileID: 4336891094729161282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4350749572499893267 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155949022900732171, guid: bae7bca67e2e50948a0921d15bc79bd9, type: 3}
