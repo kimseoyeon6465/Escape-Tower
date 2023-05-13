@@ -37,6 +37,6 @@ public class GetKey : MonoBehaviour
 
     public void SetText()
     {
-        text.text = "Key : " + keyCount.ToString();
+        text.text = "Key : " + keyCount.ToString();//여기가 문제인데 왜인지 모르겠음
     }
 }

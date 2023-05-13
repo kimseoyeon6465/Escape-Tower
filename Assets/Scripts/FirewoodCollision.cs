@@ -6,6 +6,7 @@ public class FirewoodCollision : MonoBehaviour
 {
     public GameObject FirewoodObject;
     public GameObject FirePrefab;
+    public GameObject KeyPrefab;
     public GameObject SnowMan;
     private float targetScale = 0.25f;
     private float duration = 2f;
@@ -27,13 +28,16 @@ public class FirewoodCollision : MonoBehaviour
         {
             Debug.Log("Firewood collision");
             Vector3 FirewoodPosition = this.gameObject.transform.position;
+            Vector3 SnowManPosition = SnowMan.transform.position;
             GameObject fire = Instantiate(FirePrefab, FirewoodPosition, Quaternion.identity);
             //여기서 Destroy를 해야하지 않나?
             //Destroy(객체);
             //Invoke("DestroySnowMan", 3f);
             //Invoke("ResizeSnowman", 3f);
             StartCoroutine(ResizeObjectOverTime(SnowMan,targetScale, duration));
-
+            GameObject key = Instantiate(KeyPrefab, SnowManPosition, Quaternion.identity);
+            Debug.Log("key Instantiate");
+        
         }
     }
     void DestroySnowMan()
