@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragObject : MonoBehaviour//안움직임
+public class DragObject : MonoBehaviour//이걸 포폴에 넣을수 있을까?
 {
     public bool isDragging = false;
     private float distance;
