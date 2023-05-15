@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class Player : MonoBehaviour
@@ -11,6 +12,8 @@ public class Player : MonoBehaviour
 
     public float speed;
     public float rotateSpeed;
+    public Text text;
+
     //public bool isWalk = false;
     float horizontalInput;
     float verticalInput;
@@ -19,6 +22,10 @@ public class Player : MonoBehaviour
     Vector3 movement;
     Vector3 movementDirection;
     Animator animator;
+
+    int keyCount = 0;
+
+
     // Start is called before the first frame update
     //뭘 해야하나
     void Awake()
@@ -26,6 +33,8 @@ public class Player : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
 
         animator = GetComponent<Animator>();
+        text = GameObject.Find("Keytext").GetComponent<Text>();
+
     }
     private void Start()
     {
@@ -151,6 +160,17 @@ public class Player : MonoBehaviour
         //    {
         //    }
         //}
-    }
+public void GetScore()
+{
+    keyCount += 1;
+    Debug.Log(keyCount);
+    SetText();
+}
+public void SetText()
+{
+    text.text = "Key : " + keyCount.ToString();//여기가 문제인데 왜인지 모르겠음
+}
+}
+
 
 

@@ -3983,7 +3983,7 @@ GameObject:
   - component: {fileID: 379546055}
   - component: {fileID: 379546054}
   m_Layer: 5
-  m_Name: Key text
+  m_Name: Keytext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8079,6 +8079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 379546054}
+  player: {fileID: 0}
 --- !u!1001 &960688774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14411,6 +14412,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3972674420810396104, guid: b8983df1b41b9a046a2bf792f6daff48, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 379546054}
+    - target: {fileID: 3972674420810396104, guid: b8983df1b41b9a046a2bf792f6daff48, type: 3}
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
@@ -19947,7 +19952,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1179756257289136998, guid: bae7bca67e2e50948a0921d15bc79bd9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bae7bca67e2e50948a0921d15bc79bd9, type: 3}
 --- !u!1001 &530995254187695843
 PrefabInstance:
@@ -20171,6 +20177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 379546054}
+  player: {fileID: 0}
 --- !u!1001 &5228976546824708621
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -52,7 +52,7 @@ public class FirewoodCollision : MonoBehaviour
     }
     public IEnumerator ResizeObjectOverTime(GameObject targetObject, float targetScale, float duration)
     {
-        Debug.Log("코루틴 호출");
+        //Debug.Log("코루틴 호출");
         Transform objectTransform = targetObject.GetComponent<Transform>();
         Vector3 initialScale = objectTransform.localScale;
         Vector3 targetScaleVector = new Vector3(targetScale, targetScale, targetScale);
@@ -60,7 +60,7 @@ public class FirewoodCollision : MonoBehaviour
         float elapsedTime = 0f;
         while (elapsedTime < duration)
         {
-            Debug.Log("while문 걸림");
+            //Debug.Log("while문 걸림");
             objectTransform.localScale = Vector3.Lerp(initialScale, targetScaleVector, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;
