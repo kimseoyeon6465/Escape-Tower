@@ -2,20 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Player2 : MonoBehaviour//플레이어 회전 수정함. 점프구현 삭제해야함.
 {
     public float moveSpeed;
     public float rotateSpeed;
     public float jumpPower;
+
     private Rigidbody charRigidbody;
     public bool isJumping = false;
     Animator anim;
     Vector3 movement;
     Vector3 pos;
+
     void Awake()
     {
         charRigidbody = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
+
     }
 
     void FixedUpdate()
@@ -86,5 +90,6 @@ public class Player2 : MonoBehaviour//플레이어 회전 수정함. 점프구현 삭제해야함.
 
     //    }
     //}
+    
 }
 

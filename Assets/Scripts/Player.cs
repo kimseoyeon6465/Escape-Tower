@@ -168,7 +168,7 @@ public void GetScore()
 }
 public void SetText()
 {
-    text.text = "Key : " + keyCount.ToString();//여기가 문제인데 왜인지 모르겠음
+    text.text = "Key : " + keyCount.ToString();
 }
 }
 

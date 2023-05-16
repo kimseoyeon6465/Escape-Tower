@@ -37,6 +37,8 @@ public class FirewoodCollision : MonoBehaviour
             StartCoroutine(ResizeObjectOverTime(SnowMan,targetScale, duration));
             GameObject key = Instantiate(KeyPrefab, SnowManPosition, Quaternion.identity);
             Debug.Log("key Instantiate");
+            GameObject doorToOut = GameObject.Find("doorway5");
+            Destroy(doorToOut);
         
         }
     }

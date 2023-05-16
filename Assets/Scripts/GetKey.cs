@@ -24,11 +24,11 @@ public class GetKey : MonoBehaviour
     void OnMouseDown()//열쇠를 클릭하면 열쇠 카운트 증가, 열쇠 갯수 채우면 게임 종료
     {
         Debug.Log("key is clicked");
-        GameObject doorToOut = GameObject.Find("doorway3");
+        GameObject stage3Door = GameObject.Find("wall39");
 
         player.GetComponent<Player>().GetScore();
         Destroy(this.gameObject);
-        Destroy(doorToOut);
+        Destroy(stage3Door);
 
     }
 }
