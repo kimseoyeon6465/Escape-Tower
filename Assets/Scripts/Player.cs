@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
         //Turn();
         //Run();
         //Run2();
-       
+
     }
     void Turn()
     {
@@ -142,35 +142,33 @@ public class Player : MonoBehaviour
 
 
     //    }
-        //void OnCollisionEnter(Collision collision)
-        //{
-        //    //    if (collision.gameObject.CompareTag("Door"))
-        //    //    {
-        //    //        SceneManager.LoadScene("3x3Puzzle");
-        //    //}
-        //    if (collision.gameObject.CompareTag("DoorToFloor1"))
-        //    {
-        //        SceneManager.LoadScene("Floor1");
+    //void OnCollisionEnter(Collision collision)
+    //{
+    //    //    if (collision.gameObject.CompareTag("Door"))
+    //    //    {
+    //    //        SceneManager.LoadScene("3x3Puzzle");
+    //    //}
+    //    if (collision.gameObject.CompareTag("DoorToFloor1"))
+    //    {
+    //        SceneManager.LoadScene("Floor1");
 
-        //    }
-        //}
-        //private void OnTriggerEnter(Collider collision)
-        //{
-        //    if(collision.tag=="Key")
-        //    {
-        //    }
-        //}
-public void GetScore()
-{
-    keyCount += 1;
-    Debug.Log(keyCount);
-    SetText();
+    //    }
+    //}
+    //private void OnTriggerEnter(Collider collision)
+    //{
+    //    if(collision.tag=="Key")
+    //    {
+    //    }
+    //}
+    public void GetScore()
+    {
+        keyCount += 1;
+        Debug.Log(keyCount);
+        SetText();
+    }
+    public void SetText()
+    {
+        text.text = "Key : " + keyCount.ToString();
+    }
 }
-public void SetText()
-{
-    text.text = "Key : " + keyCount.ToString();
-}
-}
-
-
 

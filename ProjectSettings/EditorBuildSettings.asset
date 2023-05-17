@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/3x3Puzzle.unity
     guid: cc9ff1bd6c188164d8a64d68dcbfc0d9
+  - enabled: 1
+    path: Assets/Scenes/GameClear.unity
+    guid: 68720dab475d1bf47b2097ec1883645b
   m_configObjects: {}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Sword : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Sword : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log("Sword is clicked");
-        GameClear();
+        SceneManager.LoadScene("GameClear");
     }
     public void GameClear()
     {

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GetKey : MonoBehaviour
 {
-    public Text text;
+    private Text text;
     public GameObject player;
     //int keyCount = 0;
     // Start is called before the first frame update
