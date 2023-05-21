@@ -36,4 +36,5 @@ public class NewScript : MonoBehaviour
         // 카메라 회전량을 카메라에 반영(X, Y축만 회전)
         transform.eulerAngles = new Vector3(xRotate, yRotate, 0);
     }
+    //새로운 주석 달기
 }
