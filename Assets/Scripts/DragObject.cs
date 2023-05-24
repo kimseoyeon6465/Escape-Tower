@@ -14,7 +14,7 @@ public class DragObject : MonoBehaviour//이걸 포폴에 넣을수 있을까?
 
         isDragging = true;
         distance = Vector3.Distance(transform.position, Camera.main.transform.position);
-        //Debug.Log("distance"+distance);
+
     }
     
     void OnMouseUp()
