@@ -43,13 +43,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //horizontalMove = Input.GetAxisRaw("Horizontal");
-        //verticalMove = Input.GetAxisRaw("Vertical");
-
-        //animator.SetBool("isWalk", movement != Vector3.zero);
-
-        //AnimationUpdate();
-        //Debug.Log(animator.GetBool("isWalk"));
+      
         GetInput();
         Move();
         Turn();
@@ -70,13 +64,7 @@ public class Player : MonoBehaviour
             rigidbody.MoveRotation(Quaternion.RotateTowards(rigidbody.rotation, targetRotation, 200f * Time.fixedDeltaTime));
         }
     }
-    //void Run()
-    //{
-    //    movement = new Vector3(horizontalMove, 0, verticalMove).normalized;
-    //    movement = movement.normalized * speed * Time.deltaTime;
-
-    //    rigidbody.MovePosition(transform.position + movement);
-    //}
+    
     void Run2()
     {
         float hAxis = Input.GetAxisRaw("Horizontal");
