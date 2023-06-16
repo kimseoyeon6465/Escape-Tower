@@ -24,15 +24,12 @@ public class DragObject : MonoBehaviour//
     
     void Update()
     {
-        //Debug.Log(isDragging);
         if (isDragging)
         {
             Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance);
-            //Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
             transform.position = worldPosition;
         }
-        //print(transform.position);
 
     }
 
