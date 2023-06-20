@@ -52,18 +52,7 @@ public class Player2 : MonoBehaviour//플레이어 회전 수정함. 점프구현 삭제해야함.
 
         charRigidbody.MovePosition(transform.position + movement);
     }
-    //void Jump()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Space) && isJumping == false)
-    //    {
-    //        charRigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
-    //        anim.SetBool("isJump", true);
-
-    //        isJumping = true;
-    //        //Debug.Log(isJumping);
-    //    }
-
-    //}
+    
     void Slide()
     {
         if (Input.GetMouseButton(0))
