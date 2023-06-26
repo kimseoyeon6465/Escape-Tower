@@ -32,12 +32,7 @@ public class GetKey : MonoBehaviour
 
     }
 }
-    //public void GetScore()
-    //{
-    //    keyCount += 1;
-    //    Debug.Log(keyCount);
-    //    SetText();
-    //}
+   
 
 //    public void SetText()
 //    {

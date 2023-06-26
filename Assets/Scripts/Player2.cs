@@ -68,17 +68,7 @@ public class Player2 : MonoBehaviour//플레이어 회전 수정함. 점프구현 삭제해야함.
 
         }
     }
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Ground"))
-    //    {
-    //        anim.SetBool("isJump", false);
-
-    //        isJumping = false;
-    //        //Debug.Log(isJumping);
-
-    //    }
-    //}
+   
     
 }
 
