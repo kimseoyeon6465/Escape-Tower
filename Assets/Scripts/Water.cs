@@ -14,7 +14,6 @@ public class Water : MonoBehaviour
 
     private Color originColor;
     private float originFogDensity;
-    // Start is called before the first frame update
     void Start()
     {
         originColor = RenderSettings.fogColor;
@@ -23,7 +22,6 @@ public class Water : MonoBehaviour
         originDrag = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         

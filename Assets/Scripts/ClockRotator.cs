@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClockRotator : MonoBehaviour//디버그는 찍히는데 rotation이 안됨.
+public class ClockRotator : MonoBehaviour
 {
     private Vector3 mouseStartPosition;
     private float rotateSpeed = 5f;

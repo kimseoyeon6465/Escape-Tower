@@ -9,13 +9,11 @@ public class FPSCameraTurn : MonoBehaviour
 
     private float xRotate = 0.0f; // 내부 사용할 X축 회전량은 별도 정의 ( 카메라 위 아래 방향 )
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.timeScale != 0)

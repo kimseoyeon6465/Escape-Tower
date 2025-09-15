@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class KeytoBox : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject ClosedBoxObject;
     public GameObject OpenBoxPrefab;
     public GameObject openbox;
@@ -19,7 +18,6 @@ public class KeytoBox : MonoBehaviour
         ClosedBoxObject = GameObject.Find("box10");
     }
 
-    // Update is called once per frame
     void Update()
     {
         

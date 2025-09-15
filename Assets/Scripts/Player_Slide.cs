@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Player2 : MonoBehaviour//플레이어 회전 수정함. 점프구현 삭제해야함.
+public class Player2 : MonoBehaviour
 {
     public float moveSpeed;
     public float rotateSpeed;

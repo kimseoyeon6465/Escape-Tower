@@ -6,14 +6,12 @@ public class NotCorrectLever : MonoBehaviour
 {
     Animator anim;
 
-    // Start is called before the first frame update
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         

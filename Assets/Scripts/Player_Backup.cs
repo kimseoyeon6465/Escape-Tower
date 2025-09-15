@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player3 : MonoBehaviour//이 스크립트 복사해서 붙여넣었는데 tower escape 게임에서 회전이 잘 안됨.
+public class Player3 : MonoBehaviour
 {
     public float moveSpeed;
     public float rotateSpeed;

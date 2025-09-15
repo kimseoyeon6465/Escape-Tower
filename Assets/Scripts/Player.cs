@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
 
 
     // Start is called before the first frame update
-    //¹» ÇØ¾ßÇÏ³ª
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();

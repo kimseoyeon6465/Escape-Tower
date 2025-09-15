@@ -10,14 +10,12 @@ public class FirewoodCollision : MonoBehaviour
     public GameObject SnowMan;
     private float targetScale = 0.25f;
     private float duration = 2f;
-    // Start is called before the first frame update
     void Start()
     {
         FirewoodObject = GameObject.Find("Firewood_B(Clone)");
         SnowMan=GameObject.FindWithTag("Snowman");
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -30,10 +28,6 @@ public class FirewoodCollision : MonoBehaviour
             Vector3 FirewoodPosition = this.gameObject.transform.position;
             Vector3 SnowManPosition = SnowMan.transform.position;
             GameObject fire = Instantiate(FirePrefab, FirewoodPosition, Quaternion.identity);
-            //여기서 Destroy를 해야하지 않나?
-            //Destroy(객체);
-            //Invoke("DestroySnowMan", 3f);
-            //Invoke("ResizeSnowman", 3f);
             StartCoroutine(ResizeObjectOverTime(SnowMan,targetScale, duration));
             GameObject key = Instantiate(KeyPrefab, SnowManPosition, Quaternion.identity);
             Debug.Log("key Instantiate");

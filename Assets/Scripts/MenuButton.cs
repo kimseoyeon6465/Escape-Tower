@@ -5,14 +5,12 @@ using UnityEngine;
 public class MenuButton : MonoBehaviour
 {
     public GameObject menuPanel;
-    // Start is called before the first frame update
     void Start()
     {
         menuPanel.SetActive(false);
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         
