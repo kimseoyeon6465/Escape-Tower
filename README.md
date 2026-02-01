@@ -1,5 +1,8 @@
 프로젝트명: Escape Tower
 
+🎥YouTube
+https://www.youtube.com/watch?v=HS-QF0Z39VY
+
 프로젝트 개요
 Unity 기반 3D 방탈출 게임으로, 퍼즐 상호작용, 아이템 수집 상태가 변경되는 구조를 구현했습니다. 사용자 입력과 게임 상태 변화가 직접적으로 연결되는 상호작용 중심의 게임 시스템을 설계했습니다.
 
